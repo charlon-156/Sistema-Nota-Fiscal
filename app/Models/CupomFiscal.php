@@ -5,21 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NotaFiscal extends Model
+class CupomFiscal extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'numero',
-        'serie',
         'valor',
         'data_emissao',
-        'instituicao_id',
+        'estabelecimento',
         'descricao',
     ];
-
-    public function instituicao()
-    {
-        return $this->belongsTo(Instituicao::class);
-    }
 }
