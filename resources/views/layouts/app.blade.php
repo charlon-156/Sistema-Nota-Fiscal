@@ -85,8 +85,8 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('notas-fiscais.index') }}">Notas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('cupons-fiscais.index') }}">Cupons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('notas.index') }}">Notas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('cupom.index') }}">Cupons</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('instituicoes.index') }}">Instituições</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Ajuda</a></li>

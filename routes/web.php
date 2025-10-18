@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NotalFiscalController;
+use App\Http\Controllers\NotaFiscalController;
+use App\Http\Controllers\InstituicaoController;
+use App\Http\Controllers\CupomFiscalController;
 
 
 Route::get('/', function () {

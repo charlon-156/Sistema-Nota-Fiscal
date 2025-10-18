@@ -134,7 +134,7 @@
         </div>
         
         <div class="dashboard">
-            <a href="{{ route('notas-fiscais.index') }}" class="card">
+            <a href="{{ route('notas.index') }}" class="card">
                 <div class="card-icon">
                     <i class="fas fa-file-invoice"></i>
                 </div>
@@ -142,7 +142,7 @@
                 <p class="card-description">Gerencie todas as notas fiscais emitidas e recebidas. Controle prazos, status e visualize relatórios detalhados.</p>
             </a>
             
-            <a href="{{ route('cupons-fiscais.index') }}" class="card">
+            <a href="{{ route('cupom.index') }}" class="card">
                 <div class="card-icon">
                     <i class="fas fa-receipt"></i>
                 </div>
@@ -150,7 +150,7 @@
                 <p class="card-description">Controle de cupons fiscais eletrônicos com registro de data, valor e estabelecimento.</p>
             </a>
             
-            <a href="#" class="card">
+            <a href="{{route('instituicoes.index') }}" class="card">
                 <div class="card-icon">
                     <i class="fas fa-building"></i>
                 </div>
