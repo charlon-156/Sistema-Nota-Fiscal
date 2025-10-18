@@ -5,10 +5,10 @@
 @section('content')
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="text-light fw-bold">
+        <h1 class="text-light fw-bold mt-4">
             <i class="fas fa-building me-2"></i>Instituições
         </h1>
-        <a href="{{ route('instituicoes.create') }}" class="btn btn-success">
+        <a href="{{ route('instituicoes.create') }}" class="btn btn-success mt-4">
             <i class="fas fa-plus me-1"></i> Nova Instituição
         </a>
     </div>
@@ -35,13 +35,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($instituicoes as $instituicao)
+                    @foreach($instituicoes as $instituicao)
                         <tr>
                             <td>{{ $instituicao->id }}</td>
                             <td>{{ $instituicao->nome }}</td>
                             <td>{{ $instituicao->cnpj ?? '—' }}</td>
-                            <td>{{ ucfirst($instituicao->tipo ?? 'Não definido') }}</td>
+                            <td>{{ ucfirst($instituicao->natureza_juridica ?? 'Não definido') }}</td>
                             <td class="text-end">
-                                <a href="{{ route('instituicoes.show', $instituicao->id) }}" class="btn btn-sm btn-outline-info">
+                                <a href="{{url('/instituicoes', [$instituicao->id])}}" class="btn btn-sm btn-outline-info">
                                     <i class="fas fa-eye"></i>
                                 </a>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
