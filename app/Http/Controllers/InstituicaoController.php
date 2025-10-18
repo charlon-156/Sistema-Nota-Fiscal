@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Instituicao;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class InstituicaoController extends Controller
 {
@@ -31,8 +33,9 @@ class InstituicaoController extends Controller
             ->with('success', 'Instituição criada com sucesso.');
     }
 
-    public function show(Instituicao $instituicao)
+    public function show($id)
     {
+        $instituicao = Instituicao::find($id);
         return view('instituicoes.show', compact('instituicao'));
     }
 

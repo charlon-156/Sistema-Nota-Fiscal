@@ -19,6 +19,7 @@ return new class extends Migration
         $table->string('cnpj', 14)->unique();
         $table->string('endereco')->nullable();
         $table->string('telefone')->nullable();
+        $table->string('natureza_juridica');
         $table->string('email')->nullable();
         $table->timestamps();
     });

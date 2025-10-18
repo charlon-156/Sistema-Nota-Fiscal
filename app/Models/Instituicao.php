@@ -14,6 +14,7 @@ class Instituicao extends Model
         'cnpj',
         'endereco',
         'telefone',
+        'natureza_juridica',
         'email',
     ];
 
