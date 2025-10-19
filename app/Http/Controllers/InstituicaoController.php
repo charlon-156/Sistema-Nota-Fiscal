@@ -44,14 +44,24 @@ class InstituicaoController extends Controller
         return view('instituicoes.edit', compact('instituicao'));
     }
 
-    public function update(Request $request, Instituicao $instituicao)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required',
-            'cnpj' => 'required|max:14|unique:instituicoes,cnpj,' . $instituicao->id,
+            'cnpj' => 'required|max:14',
         ]);
 
-        $instituicao->update($request->all());
+        $instituicao = Instituicao::find($id);
+
+        $instituicao->update([
+            'nome' => $request->nome,
+            'cnpj' => $request->cnpj,
+            'endereco' => $request->endereco,
+            'telefone' => $request->telefone,
+            'natureza_juridica' => $request->natureza_juridica,
+            'situacao_cadastral' => $request->situacao_cadastral,
+            'data_abertura' => $request->data_abertura,
+        ]);
 
         return redirect()->route('instituicoes.index')
             ->with('success', 'Instituição atualizada com sucesso');
