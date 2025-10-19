@@ -37,6 +37,10 @@
             text-align: center;
         }
 
+        .hero-img {
+            max-width: 200px;
+        }
+
         .hero-title {
             font-size: 3rem;
             font-weight: 700;
@@ -129,6 +133,7 @@
 
     <div class="container">
         <div class="hero-section">
+            <img class="hero-img" src="{{ asset('storage/logo-site.png')}}">
             <h1 class="hero-title">Controle Fiscal Completo</h1>
             <p class="hero-subtitle">Gerencie notas fiscais, cupons fiscais e instituições de forma eficiente e organizada</p>
         </div>
