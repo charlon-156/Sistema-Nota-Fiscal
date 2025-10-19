@@ -15,6 +15,8 @@ class Instituicao extends Model
         'endereco',
         'telefone',
         'natureza_juridica',
+        'data_abertura',
+        'situação_cadastral',
         'email',
     ];
 

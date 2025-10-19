@@ -20,6 +20,8 @@ return new class extends Migration
         $table->string('endereco')->nullable();
         $table->string('telefone')->nullable();
         $table->string('natureza_juridica');
+        $table->date('data_abertura');
+        $table->string('situação_cadastral');
         $table->string('email')->nullable();
         $table->timestamps();
     });
