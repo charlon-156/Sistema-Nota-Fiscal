@@ -11,10 +11,12 @@ class NotaFiscalController extends Controller
      public function index()
     {
         $notas = NotaFiscal::with('instituicao')
-            ->orderBy('data_emissao', 'desc')
-            ->paginate(10);
+        ->orderBy('data_emissao', 'desc')
+        ->paginate(10);
 
-        return view('notas.index', compact('notas'));
+    $instituicoes = Instituicao::all(); // Adicione esta linha
+
+    return view('notas.index', compact('notas', 'instituicoes'));
     }
 
     public function create()

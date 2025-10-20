@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notas_fiscais', function (Blueprint $table) {
+        Schema::create('nota_fiscals', function (Blueprint $table) {
         $table->id();
         $table->foreignId('instituicao_id')->constrained()->onDelete('cascade');
         $table->string('numero_nota');
