@@ -10,10 +10,12 @@ class CupomFiscal extends Model
     use HasFactory;
 
     protected $fillable = [
-        'numero',
-        'valor',
-        'data_emissao',
-        'estabelecimento',
-        'descricao',
+        'instituicao_id', 'numero_cupom', 'coo', 'data_emissao',
+        'hora_emissao', 'valor_total', 'cpf_consumidor', 'observacoes'
     ];
+
+    public function instituicao()
+    {
+        return $this->belongsTo(Instituicao::class);
+    }
 }
