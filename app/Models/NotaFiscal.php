@@ -10,12 +10,14 @@ class NotaFiscal extends Model
     use HasFactory;
 
     protected $fillable = [
-        'numero',
-        'serie',
-        'valor',
-        'data_emissao',
-        'instituicao_id',
-        'descricao',
+        'instituicao_id', 'numero_nota', 'serie',
+        'data_emissao', 'valor_total', 'chave_acesso', 
+        'tipo_operacao', 'destinatario', 'observacoes'
+    ];
+
+    protected $casts = [
+        'data_emissao' => 'date',
+        'valor_total' => 'decimal:2',
     ];
 
     public function instituicao()

@@ -13,14 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notas_fiscais', function (Blueprint $table) {
+        Schema::create('nota_fiscals', function (Blueprint $table) {
         $table->id();
-        $table->string('numero');
-        $table->string('serie');
-        $table->decimal('valor', 10, 2);
-        $table->date('data_emissao');
         $table->foreignId('instituicao_id')->constrained()->onDelete('cascade');
-        $table->text('descricao')->nullable();
+        $table->string('numero_nota');
+        $table->string('serie')->default('1');
+        $table->date('data_emissao');
+        $table->decimal('valor_total', 10, 2);
+        $table->string('chave_acesso', 44)->unique()->nullable();
+        $table->enum('tipo_operacao', ['entrada', 'saida'])->default('saida');
+        $table->string('destinatario')->nullable();
+        $table->text('observacoes')->nullable();
         $table->timestamps();
     });
     }

@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cupons_fiscais', function (Blueprint $table) {
+         Schema::create('cupons_fiscais', function (Blueprint $table) {
         $table->id();
-        $table->string('numero');
-        $table->decimal('valor', 10, 2);
+        $table->foreignId('instituicao_id')->constrained()->onDelete('cascade');
+        $table->string('numero_cupom');
+        $table->string('coo'); // Contador Ordem Operação
         $table->date('data_emissao');
-        $table->string('estabelecimento');
-        $table->text('descricao')->nullable();
+        $table->time('hora_emissao');
+        $table->decimal('valor_total', 10, 2);
+        $table->string('cpf_consumidor', 11)->nullable();
+        $table->text('observacoes')->nullable();
         $table->timestamps();
     });
     }

@@ -20,8 +20,13 @@ class Instituicao extends Model
         'email',
     ];
 
-    public function notasFiscais()
+     public function notasFiscais()
     {
         return $this->hasMany(NotaFiscal::class);
+    }
+
+    public function cuponsFiscais()
+    {
+        return $this->hasMany(CupomFiscal::class);
     }
 }
